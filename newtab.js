@@ -12,9 +12,11 @@ document.addEventListener("DOMContentLoaded", function() {
     addButton.addEventListener('click',add);
     const clearButton = document.getElementById("clearall");
     clearButton.addEventListener('click',clear);
+    const nameButton = document.getElementById("tiktok");
+    nameButton.addEventListener('click',toggle);
     try{
         chrome.storage.sync.get('todo', function({todo}) {
-            console.log('Value is get to ',todo);
+            console.log('Value is get to ',toggle);
             todo.push(input.value);
             renderTask(todo)
         })
@@ -102,4 +104,11 @@ const clear = ()=>{
     });
     const tasklist = document.getElementById("task-list");
     tasklist.innerHTML="";
+}
+
+const toggle = ()=>{
+    if(document.getElementById("input").style.display=="block")
+    document.getElementById("input").style.display = "none";
+    else
+    document.getElementById("input").style.display = "block";
 }
