@@ -7,9 +7,11 @@
 [![chrome](https://img.shields.io/badge/platform-chrome-black)](https://img.shields.io/badge/platform-chrome-black)
 [![status](https://img.shields.io/badge/status-work_in_progress-black)](https://img.shields.io/badge/status-work_in_progress-black)
 
-<p align="center">
-    <img width="60%" src="./Demo.gif">
-</p>
+<div align="center">
+    <kbd>
+        <img src="./Demo.gif" width="60%">
+    </kbd>
+</div>
 
 </div>
 
