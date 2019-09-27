@@ -15,4 +15,24 @@
 
 </div>
 
+
+------------------------------------------
+
+
 > A minimalist new tab to remind me of tasks I have remaining to be done, when I procarstinate on the web.
+
+## Features
+- [x] time
+- [X] quotes
+- [X] sync across device
+- [ ] visualize time remaining
+- [ ] did I here night mode
+
+> will keep making a few additions as an when I find think of some new features.
+
+## Installation
+- Download zip file or clone the repository
+- Go to [Manage Extension](chrome://extensions/)
+- Select Load Unpacked options
+- Select the directory where you have this project downloaded 
+And you are good to go
