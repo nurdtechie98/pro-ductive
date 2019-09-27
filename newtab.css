@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+.body {
+    background-color: #e8e8e8;
+    width: 100%;
+    height: auto;
+    bottom: 0px;
+    top: 0px;
+    left: 0;
+    position: relative;
+    text-align: center;
+}
+
+#apps {
+    font-family: 'Lato';
+    max-width: 65%;
+    height: 40%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    text-align: center;
+}
+
+#quote {
+    height: 25%;
+    text-decoration: underline;
+}
+
+#todo {
+    margin-top:2%; 
+}
+
+#dateTime {
+    font-family: 'Lato';
+    max-width: 30%;
+    height: 80%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    text-align: center;
+}
+#date {
+    font-size: 1.5rem;
+    margin: 0
+}
+#time {
+    font-size: 4.0rem;
+    margin: 0
+}
+
+#dateTime {
+    font-family: 'Lato';
+    max-width: 30%;
+    height: 80%;
+    overflow: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    text-align: center;
+}
+
+#input {
+    justify-content: center;
+    width: 100%
+}
+#todo{
+    text-align: center;
+}
+#new-todo {
+    width: 60%;
+    font: 1.5em 'Lato';
+    border-color: black;
+    color: black;
+    border-radius: 3px;
+    border-width: 1px;
+}
+.button {
+    margin: 10px;
+    margin-right: 0px;
+    width: 15%;
+    height: auto;
+    font: 1.5em 'Lato';
+    cursor: pointer;
+    border-color: black;
+    color: black;
+    border-radius: 3px;
+    border-width: 1px;
+}
+
+#task-list {
+    font: 1.5em 'Lato';
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+#task {
+    text-align: left;
+    font: 1.5em 'Lato';
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.delete-button{
+    font-size: 1rem;
+    color: black;
+    cursor: pointer;
+    align-self: end;
+    margin-right: 1rem;
+    padding: .3rem .5rem;
+    text-align: center;
+    display:inline;
+}
+
+label{
+    margin-left: 1rem;
+}
+
+h3{
+    font-size: 2rem;
+    margin: 0%;
+}
+
+
