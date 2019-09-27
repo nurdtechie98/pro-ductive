@@ -1,7 +1,7 @@
 
 <h1 align="center">Pro ductive</h1>
 <p align="center">
-    <img width="30%" src="./time.png">
+    <img width="20%" src="./time.png">
 </p>
 <p align="center">Yet another new tab extension with To-Do list</p>
 <div align="center">
