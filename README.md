@@ -8,8 +8,9 @@
 [![status](https://img.shields.io/badge/status-work_in_progress-black)](https://img.shields.io/badge/status-work_in_progress-black)
 
 <p align="center">
-    <img src="./Demo.gif">
+    <img width="60%" src="./Demo.gif">
 </p>
+
 </div>
 
 > A minimalist new tab to remind me of tasks I have remaining to be done, when I procarstinate on the web.
