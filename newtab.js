@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
     nameButton.addEventListener('click',toggle);
     try{
         chrome.storage.sync.get('todo', function({todo}) {
-            console.log('Value is get to ',toggle);
+            //console.log('Value is get to ',toggle);
             todo.push(input.value);
             renderTask(todo)
         })
@@ -44,7 +44,7 @@ var add = async()=>{
     check.type = 'checkbox';
     check.id = id;
     const del = document.createElement('div');
-    del.textContent = 'x';
+    del.innerHTML = "&#10005;";
     del.classList.add('delete-button');
     const label = document.createElement('label');
     label.id = 'label-'+id;
@@ -52,12 +52,14 @@ var add = async()=>{
     label.textContent = input.value;
     newtask.appendChild(check);
     newtask.appendChild(label);
+    newtask.appendChild(del);
+    del.addEventListener('click',()=>{deleteTodo('label-'+id)});
     newtask.className+='task'
     val = input.value
     tasklist.appendChild(newtask);
         try{
             chrome.storage.sync.get('todo', function({todo}) {
-                console.log('Value is get to ',todo);
+                //console.log('Value is get to ',todo);
                 if(todo==undefined)
                 setValue([val]);
                 todo.push(val);
@@ -67,12 +69,13 @@ var add = async()=>{
         catch(err){
             setValue([val]);
         }
-        const setValue = (todos)=>{
-            chrome.storage.sync.set({'todo': todos}, function() {
-                console.log('Value is set to ',todos);
-            })
-        }
     input.value="";
+}
+
+const setValue = (todos)=>{
+    chrome.storage.sync.set({'todo': todos}, function() {
+        //console.log('Value is set to ',todos);
+    })
 }
 
 var renderTask = (todos)=>{
@@ -85,7 +88,7 @@ var renderTask = (todos)=>{
             check.type = 'checkbox';
             check.id = id;
             const del = document.createElement('div');
-            del.textContent = 'x';
+            del.innerHTML = "&#10005;";
             del.classList.add('delete-button');
             const label = document.createElement('label');
             label.id = 'label-'+id;
@@ -93,6 +96,8 @@ var renderTask = (todos)=>{
             label.textContent = element;
             newtask.appendChild(check);
             newtask.appendChild(label);
+            newtask.appendChild(del);
+            del.addEventListener('click',()=>{deleteTodo('label-'+id)});
             newtask.className+='task'
             tasklist.appendChild(newtask);
         }
@@ -100,7 +105,7 @@ var renderTask = (todos)=>{
 }
 const clear = ()=>{
     chrome.storage.sync.clear(()=>{
-        console.log("cleared");
+        //console.log("cleared");
     });
     const tasklist = document.getElementById("task-list");
     tasklist.innerHTML="";
@@ -112,3 +117,18 @@ const toggle = ()=>{
     else
     document.getElementById("input").style.display = "block";
 }
+
+const deleteTodo = (id)=>{
+    const label = document.getElementById(id);
+    const parent = label.parentNode;
+    const d_todo = label.textContent;
+    //console.log("del value:",d_todo);
+    chrome.storage.sync.get('todo', function({todo}) {
+        //console.log('Value is get to:::',todo);
+        new_todo = todo.filter(c_todo=>c_todo!=d_todo)
+        setValue(new_todo)
+    });
+    document.getElementById('task-list').removeChild(parent);
+}
+
+//chrome.storage.sync.clear();
